@@ -73,6 +73,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				})
 					.then(response => response.json())
 					.then(data => {
+						//console.log(data.company_name, data.vin);
 						return [data.company_name, data.vin];
 					})
 					.catch(error => {
