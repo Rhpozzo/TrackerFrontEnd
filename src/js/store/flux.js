@@ -3,22 +3,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			hash: "",
-			company: [],
-			vans: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			companies: [],
+			vans: [],
+			activities: []
 		},
 		actions: {
-			// VAN
+			// VANS
 			createVan: data => {
 				fetch("https://loadtrackerapi.herokuapp.com/api/van", {
 					method: "POST",
@@ -91,6 +81,85 @@ const getState = ({ getStore, getActions, setStore }) => {
 				})
 					.then(() => {
 						getActions().loadAllVans();
+					})
+					.catch(error => {
+						console.error("Error:", error);
+					});
+			},
+
+			// ACTIVITIES
+
+			createActivity: data => {
+				fetch("https://loadtrackerapi.herokuapp.com/api/activity", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${localStorage.getItem("token")}`
+					},
+					body: JSON.stringify({
+						vin: data.vin
+					})
+				})
+					.then(response => response.json())
+					.then(data => {
+						console.log("Success:", JSON.stringify(data));
+					})
+					.then(() => {
+						getActions().loadAllActivities();
+					})
+					.catch(error => {
+						console.error("Error:", error);
+					});
+			},
+
+			loadAllActivities: () => {
+				fetch("https://loadtrackerapi.herokuapp.com/api/activity", {
+					method: "GET",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${localStorage.getItem("token")}`
+					}
+				})
+					.then(response => response.json())
+					.then(data => {
+						setStore({
+							...getStore,
+							activities: data
+						});
+					})
+					.catch(error => {
+						console.error("Error:", error);
+					});
+			},
+
+			getActivity: id => {
+				fetch("https://loadtrackerapi.herokuapp.com/api/activity/" + id, {
+					method: "GET",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${localStorage.getItem("token")}`
+					}
+				})
+					.then(response => response.json())
+					.then(data => {
+						//console.log(data.company_name, data.vin);
+						return [data.vin, data.scan_time];
+					})
+					.catch(error => {
+						console.error("Error:", error);
+					});
+			},
+
+			deleteActivity: id => {
+				fetch("https://loadtrackerapi.herokuapp.com/api/activity/" + id, {
+					method: "DELETE",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${localStorage.getItem("token")}`
+					}
+				})
+					.then(() => {
+						getActions().loadAllActivities();
 					})
 					.catch(error => {
 						console.error("Error:", error);

@@ -32,7 +32,7 @@ const injectContext = PassedComponent => {
 			 *
 			 **/
 			//state.actions.loadAllVans();
-			state.actions.getVan(1581035219);
+			state.actions.loadAllActivities();
 			// console.log(state.store.hash);
 		}, []);
 
