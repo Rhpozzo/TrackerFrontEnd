@@ -9,12 +9,10 @@ const QrRead = ({ history }) => {
 	const [vin, setVin] = useState("");
 
 	const handleScan = result => {
-		console.log(result);
 		if (result) {
 			actions.createActivity({
-				vin
-			}),
-				history;
+				vin: result
+			});
 		}
 	};
 	// actions.handleError = err => {

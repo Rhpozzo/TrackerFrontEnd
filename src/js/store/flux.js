@@ -95,9 +95,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						"Content-Type": "application/json",
 						Authorization: `Bearer ${localStorage.getItem("token")}`
 					},
-					body: JSON.stringify({
-						vin: data.vin
-					})
+					body: JSON.stringify(data)
 				})
 					.then(response => console.log(response.json()))
 					.then(data => {
