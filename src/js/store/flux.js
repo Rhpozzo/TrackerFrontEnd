@@ -2,29 +2,12 @@ import React, { useState, useEffect } from "react";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			hash: "",
-<<<<<<< HEAD
-			company: [],
-			vans: []
-		},
-		actions: {
-			handleScan: data => {
-				if (data) {
-					setQr: data;
-				}
-			},
-			handleError: err => {
-				console.log(err);
-			},
-
-=======
 			companies: [],
 			vans: [],
 			activities: []
 		},
 		actions: {
 			// VANS
->>>>>>> 1c7b10b3c416b7bf41965bfa8d9f9f94d473adbb
 			createVan: data => {
 				fetch("https://loadtrackerapi.herokuapp.com/api/van", {
 					method: "POST",
@@ -105,7 +88,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			// ACTIVITIES
 
-			createActivity: data => {
+			createActivity: (data, history) => {
 				fetch("https://loadtrackerapi.herokuapp.com/api/activity", {
 					method: "POST",
 					headers: {
@@ -122,6 +105,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.then(() => {
 						getActions().loadAllActivities();
+						history.push("/app");
 					})
 					.catch(error => {
 						console.error("Error:", error);
@@ -196,9 +180,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				})
 					.then(response => response.json())
 					.then(data => {
-						setStore({
-							hash: data.jwt
-						});
 						localStorage.clear();
 						localStorage.setItem("token", data.jwt);
 						history.push("/admin");
