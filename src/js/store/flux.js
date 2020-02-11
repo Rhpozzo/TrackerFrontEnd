@@ -99,7 +99,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						vin: data.vin
 					})
 				})
-					.then(response => response.json())
+					.then(response => console.log(response.json()))
 					.then(data => {
 						console.log("Success:", JSON.stringify(data));
 					})
