@@ -12,10 +12,9 @@ const App = () => {
 		<>
 			<div className="track">
 				<div className="menu">
-					<Header tagline="COUNTDOWN TO NEXT WAVE" />
+					<Header />
 				</div>
 				<Mainview />
-				<Order />
 			</div>
 		</>
 	);

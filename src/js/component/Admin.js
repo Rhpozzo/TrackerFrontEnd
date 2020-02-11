@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import Login from "./Login";
-
+import QrReader from "./QRReader";
 export const Admin = props => {
 	return (
 		<div className="track">
@@ -17,10 +17,10 @@ export const Admin = props => {
 				</div>
 				<div className="card admin-card center-align">
 					<p className="center-align blue-gret darken-1">What would you like to do today?</p>
-					<Link to="">
+					<Link to={AddVanForm}>
 						<button className="z-depth-2 waves-effect pulse">Create a Company?</button>
 					</Link>
-					<Link to="">
+					<Link to={AddVanForm}>
 						<button className="z-depth-2 waves-effect">Add a van?</button>
 					</Link>
 					<Link to="/app">
@@ -31,13 +31,9 @@ export const Admin = props => {
 					</Link>
 				</div>
 			</div>
-			<Login />
+			<QrReader />
 		</div>
 	);
-};
-
-AddVanForm.propTypes = {
-	addVan: PropTypes.func
 };
 
 export default Admin;

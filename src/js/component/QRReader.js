@@ -1,43 +1,28 @@
-import React, { Component } from "react";
-import QrReader from "react-qr-scanner";
+import React, { Component, useState, useContext } from "react";
+import { Context } from "../store/appContext";
+import QrReader from "react-qr-reader";
 
-class Test extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			delay: 500,
-			result: "No result"
-		};
+const QrRead = () => {
+	const { actions, store } = useContext(Context);
 
-		this.handleScan = this.handleScan.bind(this);
-	}
-	handleScan(data) {
-		this.setState({
-			result: data
-		});
-		console.log(data);
-	}
-	handleError(err) {
-		console.error(err);
-	}
-	render() {
-		const previewStyle = {
-			height: 240,
-			width: 320
-		};
+	const [vin, setVin] = useState("");
 
-		return (
-			<div>
-				<QrReader
-					delay={this.state.delay}
-					style={previewStyle}
-					onError={this.handleError}
-					onScan={this.handleScan}
-				/>
-				<p>{this.state.result}</p>
-			</div>
-		);
-	}
-}
+	const handleScan = result => {
+		console.log(result);
+		if (result) {
+			setVin: result;
+		}
+	};
+	// actions.handleError = err => {
+	// 	console.log(err);
+	// };
 
-export default Test;
+	return (
+		<div>
+			<QrReader delay={3000} onScan={handleScan} style={{ width: "80%" }} />
+			<p>Vin: {vin}</p>
+		</div>
+	);
+};
+
+export default QrRead;

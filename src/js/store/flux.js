@@ -4,20 +4,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			hash: "",
 			company: [],
-			vans: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			vans: []
 		},
 		actions: {
+			handleScan: data => {
+				if (data) {
+					setQr: data;
+				}
+			},
+			handleError: err => {
+				console.log(err);
+			},
+
 			createVan: data => {
 				console.log("van added", data);
 			},

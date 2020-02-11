@@ -1,6 +1,6 @@
 import React from "react";
 import Clock from "react-live-clock";
-import Countdown from "react-countdown";
+import Countdown, { Complitionist } from "react-countdown";
 
 let time = new Date();
 let hours = time.getHours();
@@ -13,6 +13,7 @@ let sum = newSeconds + seconds;
 if (minutes < 30) {
 	timeLeft = (1800 - sum) * 1000;
 }
+
 if (minutes > 30) {
 	timeLeft = (3600 - sum) * 1000;
 }
