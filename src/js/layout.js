@@ -9,6 +9,8 @@ import QR from "./component/QRReader";
 import Admin from "./component/Admin";
 import AddVanForm from "./component/AddVanForm";
 import Main from "./views/main";
+import Single from "./views/single";
+//import ChartComp1 from "./component/ChartComp1";
 
 export const Layout = () => {
 	const basename = process.env.BASENAME || "";
@@ -25,6 +27,7 @@ export const Layout = () => {
 						<Route path="/qr" component={QR} />
 						<Route path="/app" component={App} />
 						<Route path="/admin" component={Admin} />
+						<Route path="/single" component={Single} />
 						<Route render={() => <h1>Not found!</h1>} />
 					</Switch>
 					<Footer />

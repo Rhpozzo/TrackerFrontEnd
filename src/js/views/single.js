@@ -2,24 +2,21 @@ import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import ChartComp1 from "../component/ChartComp1";
+import ChartComp2 from "../component/ChartComp2";
+import ChartComp3 from "../component/ChartComp3";
 
-export const Single = props => {
-	const { store, actions } = useContext(Context);
+const Single = () => {
 	return (
-		<div className="jumbotron">
-			<h1 className="display-4">This will show the demo element: {store.demo[props.match.params.theid].title}</h1>
-
-			<hr className="my-4" />
-
-			<Link to="/">
-				<span className="btn btn-primary btn-lg" href="#" role="button">
-					Back home
-				</span>
-			</Link>
+		<div>
+			<h1>Company N1</h1>
+			<ChartComp1 />
+			<h1>Company N2</h1>
+			<ChartComp2 />
+			<h1>Company N3</h1>
+			<ChartComp3 />
 		</div>
 	);
 };
 
-Single.propTypes = {
-	match: PropTypes.object
-};
+export default Single;
