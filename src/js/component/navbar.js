@@ -11,12 +11,16 @@ export const Navbar = () => {
 				<ul className="left hide-on-med-and-down">
 					<li>
 						<Link to="/app">
-							<a href="">Clock</a>
+							<a href="" style={{ fontSize: "3rem" }}>
+								Clock
+							</a>
 						</Link>
 					</li>
 					<li>
 						<Link to="/admin">
-							<a href="badges.html">Admin</a>
+							<a href="badges.html" style={{ fontSize: "3rem" }}>
+								Admin
+							</a>
 						</Link>
 					</li>
 				</ul>
