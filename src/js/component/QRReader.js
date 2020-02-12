@@ -2,6 +2,7 @@ import React, { Component, useState, useContext } from "react";
 import { Context } from "../store/appContext";
 import QrReader from "react-qr-reader";
 import PropTypes from "prop-types";
+import { withRouter } from "react-router";
 
 const QrRead = ({ history }) => {
 	const { actions, store } = useContext(Context);
@@ -9,10 +10,14 @@ const QrRead = ({ history }) => {
 	const [vin, setVin] = useState("");
 
 	const handleScan = result => {
+		console.log(result);
 		if (result) {
-			actions.createActivity({
-				vin: result
-			});
+			actions.createActivity(
+				{
+					vin: result
+				},
+				history
+			);
 		}
 	};
 	// actions.handleError = err => {
@@ -31,4 +36,4 @@ QrRead.propTypes = {
 	history: PropTypes.object
 };
 
-export default QrRead;
+export default withRouter(QrRead);

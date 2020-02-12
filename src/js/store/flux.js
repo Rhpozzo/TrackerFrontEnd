@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+// import React, { useState, useEffect } from "react";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -89,6 +89,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// ACTIVITIES
 
 			createActivity: (data, history) => {
+				console.log("to send ", data);
 				fetch("https://loadtrackerapi.herokuapp.com/api/activity", {
 					method: "POST",
 					headers: {
@@ -97,16 +98,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 					},
 					body: JSON.stringify(data)
 				})
-					.then(response => console.log(response.json()))
-					.then(data => {
-						console.log("Success:", JSON.stringify(data));
+					.then(response => {
+						if (response.status !== 200) {
+							throw Error("Wrong VIN");
+						} else {
+							return response.json();
+						}
 					})
-					.then(() => {
+					.then(data => {
 						getActions().loadAllActivities();
+						console.log("Success:", JSON.stringify(data));
 						history.push("/app");
 					})
 					.catch(error => {
-						console.error("Error:", error);
+						console.error(error);
 					});
 			},
 
