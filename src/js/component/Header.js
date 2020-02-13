@@ -3,6 +3,7 @@ import Clock from "react-live-clock";
 import moment from "moment";
 import PropTypes from "prop-types";
 import Countdown from "./CountdownClock";
+import CurrentAct from "./CurrentAct";
 
 const Header = () => {
 	return (
@@ -18,6 +19,7 @@ const Header = () => {
 				</h1>
 			</header>
 			<button>Wave ended</button>
+			<CurrentAct />
 		</div>
 	);
 };

@@ -5,7 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			companies: [],
 			vans: [],
 			activities: [],
-			currentAct: []
+			currentActivities: []
 		},
 		actions: {
 			// VANS
@@ -90,6 +90,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// ACTIVITIES
 
 			createActivity: (data, history) => {
+				const store = getStore();
 				console.log("to send ", data);
 				fetch("https://loadtrackerapi.herokuapp.com/api/activity", {
 					method: "POST",
@@ -109,8 +110,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => {
 						getActions().loadAllActivities();
 						setStore({
-							...getStore,
-							currentAct: data
+							currentActivities: store.currentActivities.concat(data)
 						});
 						console.log("Success:", JSON.stringify(data));
 						history.push("/app");
