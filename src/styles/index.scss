@@ -30,17 +30,22 @@ body{
   background-color: #00bcd4;
   display: flex;
   align-items: center;
+  position: relative;
 }
 .page-footer p{
   margin: auto;
 }
 .admin-card{
   display: inline-flex;
-  margin: auto;
+  margin: 100px, auto;
 }
 
 .admin-card form{
   padding: 300px;
+}
+
+.admin-view{
+  height: 95vh;
 }
 
 .inventory{
@@ -135,8 +140,19 @@ header.countdown{
 }
 
 button{
-  background-color: #00bcd4;
+  display: flex;
 }
+
+.notFound{
+ display: inline-block;
+ margin-top: 100px;
+}
+
+.qrreader{
+  border: none;
+}
+
+
 // .order-enter {
 //   -webkit-transform: translateX(-120%);
 //           transform: translateX(-120%);

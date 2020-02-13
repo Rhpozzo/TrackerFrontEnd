@@ -8,30 +8,22 @@ import Login from "./Login";
 import QrReader from "./QRReader";
 export const Admin = props => {
 	return (
-		<div className="track">
-			<div className="">
-				<div className="row">
-					<div className="col 12s">
-						<h1>Welcome Admin</h1>
-					</div>
-				</div>
-				<div className="card admin-card center-align">
-					<p className="center-align blue-gret darken-1">What would you like to do today?</p>
-					<Link to={AddVanForm}>
-						<button className="z-depth-2 waves-effect">Create a Company?</button>
-					</Link>
-					<Link to={AddVanForm}>
-						<button className="z-depth-2 waves-effect">Add a van?</button>
-					</Link>
-					<Link to="/app">
-						<button className="z-depth-2 waves-effect">View clock</button>
-					</Link>
-					<Link to="">
-						<button className="z-depth-2 waves-effect">View Companies</button>
-					</Link>
-				</div>
+		<div className="admin-view container-fluid">
+			<div className="card admin-card center-align">
+				<p className="center-align">What would you like to do today?</p>
+				<Link to={AddVanForm}>
+					<button className="">Create a Company?</button>
+				</Link>
+				<Link to="/addvan">
+					<button className="">Add a van?</button>
+				</Link>
+				<Link to="/app">
+					<button className="">View clock</button>
+				</Link>
+				<Link to="/companies">
+					<button className="">View Companies</button>
+				</Link>
 			</div>
-			<QrReader />
 		</div>
 	);
 };

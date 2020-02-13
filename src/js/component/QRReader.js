@@ -36,9 +36,8 @@ const QrRead = ({ history }) => {
 	// };
 
 	return (
-		<div>
-			<QrReader delay={1000} onScan={handleScan} style={{ width: "50%" }} />
-			<p>Vin: {setVin}</p>
+		<div className="qrreader">
+			<QrReader delay={1000} onScan={handleScan} />
 		</div>
 	);
 };
