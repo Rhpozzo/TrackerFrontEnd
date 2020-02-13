@@ -16,7 +16,7 @@ export const Admin = props => {
 				<div className="row">
 					<div className="col s12">
 						<div className="card col s6 center-align">
-							<Link to={AddVanForm}>
+							<Link to={"add-company"}>
 								<i className="large material-icons">group_add</i>
 								<button className="btn">Add a Company?</button>
 							</Link>
