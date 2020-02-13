@@ -4,6 +4,12 @@ import Countdown, { zeroPad, calcTimeDelta, formatTimeDelta } from "react-countd
 import PropTypes from "prop-types";
 
 const renderer = ({ minutes, seconds }) => {
+	if (seconds < 10) {
+		seconds = `0${seconds}`;
+	}
+	if (minutes < 10) {
+		minutes = `0${minutes}`;
+	}
 	return (
 		<span>
 			{minutes}:{seconds}

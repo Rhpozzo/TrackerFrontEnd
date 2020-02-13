@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Clock from "react-live-clock";
 import moment from "moment";
 import PropTypes from "prop-types";
-import Countdown from "./CountdownClock";
+import Count from "./CountdownClock";
 import CurrentAct from "./CurrentAct";
 import { Link } from "react-router-dom";
 
@@ -15,7 +15,7 @@ const Header = () => {
 					<br />
 				</h1>
 				<h1 className="countdown">
-					<Countdown />
+					<Count />
 				</h1>
 			</header>
 			<button className="waves-effect waves-light btn pulse">End Wave</button>

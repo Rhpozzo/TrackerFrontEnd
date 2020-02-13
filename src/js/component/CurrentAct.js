@@ -4,9 +4,13 @@ import { ContactCard } from "./ContactCard.js";
 
 const CurrentAct = () => {
 	const { store, actions } = useContext(Context);
+	// const [clearInter, setClearInter] = useState(setInterval(() => actions.loadAllActivities(), 5000))
 	useEffect(() => {
-		const clearInter = setInterval(() => actions.loadAllActivities(), 2000);
-		// return () => {
+		// const clearInter = () => {
+		// 	setInterval(() => actions.loadAllActivities(), 5000);
+		// };
+		// clearInter();
+		//return () => {
 		// 	clearInter();
 		// };
 	}, []);
@@ -15,7 +19,7 @@ const CurrentAct = () => {
 			<ul>
 				{store.activities.map((item, index) => {
 					return (
-						<div key={item.id}>
+						<div key={index}>
 							<ContactCard vin={item.vin} scan_time={item.scan_time} />
 						</div>
 					);

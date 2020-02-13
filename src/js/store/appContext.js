@@ -31,6 +31,7 @@ const injectContext = PassedComponent => {
 			 * state.actions.loadSomeData(); <---- calling this function from the flux.js actions
 			 *
 			 **/
+			setInterval(() => state.actions.loadAllActivities(), 2000);
 			//state.actions.loadAllVans();
 			// console.log(state.store.hash);
 			// const clearInter = setInterval(() => state.actions.loadAllActivities(), 2000);
@@ -38,7 +39,6 @@ const injectContext = PassedComponent => {
 			// 	clearInter();
 			// };
 		}, []);
-
 		// The initial value f]or the context is not null anymore, but the current state of this component,
 		// the context will now have a getStore, getActions and setStore functions available, because they were declared
 		// on the state of this component
