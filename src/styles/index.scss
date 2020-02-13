@@ -14,6 +14,7 @@ body{
 .nav-wrapper{
   font-size: 2rem;
   background-color: #00bcd4;
+  position: fixed;
   
 }
 .nav-wrapper a:hover, a.brand-logo:hover{
@@ -24,38 +25,27 @@ body{
   text-decoration: none;
 }
 
-.page-footer{
+.page-footer {
   font-size: 1em;
   background-color: #00bcd4;
   display: flex;
   align-items: center;
 }
+.page-footer p{
+  margin: auto;
+}
 .admin-card{
   display: inline-flex;
+  margin: auto;
 }
-// * {
-//   box-sizing: border-box;
-// }
-// html {
-//   font-size: 0%;
-// }
-// body {
-//   background: #ffffff;
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-//   font-family: 'Open Sans', sans-serif;
-//   font-size: 2rem;
-// }
-// h1 {
-//   font-family: 'blanchcaps_inline', sans-serif;
-//   text-align: center;
-//   font-weight: normal;
-//   margin: 0;
-// }
-// .nav-wrapper{
-//   font-size: 2em;
-  
-// }
+
+.admin-card form{
+  padding: 300px;
+}
+
+.inventory{
+  margin-top: 10vh;
+}
 .track {
   display: -webkit-box;
   display: flex;
@@ -142,6 +132,10 @@ header.top h3:after {
 
 header.countdown{
   font-size: 5em;
+}
+
+button{
+  background-color: #00bcd4;
 }
 // .order-enter {
 //   -webkit-transform: translateX(-120%);

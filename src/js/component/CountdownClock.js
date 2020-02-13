@@ -27,8 +27,6 @@ if (minutes > 30) {
 	timeLeft = (3600 - sum) * 1000;
 }
 
-console.log(timeLeft);
-
 const Count = () => {
 	return (
 		<div>

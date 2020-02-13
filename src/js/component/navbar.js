@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Navbar = () => {
 	return (
-		<nav className="nav-wrapper">
+		<nav className="nav-wrapper navbar-fixed">
 			<div className="">
 				<a href="#!" className="brand-logo center">
 					Time Track!

@@ -13,12 +13,12 @@ const Header = () => {
 					<Clock format={"HH:mm:ss"} interval={1000} ticking={true} timezone={"EST"} />
 					<br />
 				</h1>
-				<h3 className="tagline" />
 				<h1 className="countdown">
 					<Countdown />
 				</h1>
 			</header>
 			<button className="waves-effect waves-light btn pulse">End Wave</button>
+			<CurrentAct />
 		</div>
 	);
 };
