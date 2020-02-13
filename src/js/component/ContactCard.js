@@ -6,13 +6,9 @@ import PropTypes from "prop-types";
 export const ContactCard = props => {
 	return (
 		<li>
-			<div className="row">
-				<div className="col s12 m7">
-					<div className="card">{/* <span className="card-title">{props.vin}</span> */}</div>
-					<div className="card-content">
-						<p>{props.scan_time}</p>
-					</div>
-				</div>
+			<div className="currentActCard">
+				<i className="small material-icons">directions_bus</i>
+				<p>{props.scan_time}</p>
 			</div>
 		</li>
 	);

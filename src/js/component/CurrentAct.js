@@ -16,7 +16,7 @@ const CurrentAct = () => {
 				{store.activities.map((item, index) => {
 					return (
 						<div key={item.id}>
-							<ContactCard vin={item.vin} scan_time={item.scan_time} />
+							<ContactCard vin={item.vin} scan_time={item.scan_time.split(" ")[1]} />
 						</div>
 					);
 				})}

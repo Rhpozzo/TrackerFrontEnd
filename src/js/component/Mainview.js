@@ -5,7 +5,9 @@ const Mainview = () => {
 	return (
 		<div className="inventory">
 			<h1>Current Activity: </h1>
-			<CurrentAct />
+			<div>
+				<CurrentAct />
+			</div>
 		</div>
 	);
 };

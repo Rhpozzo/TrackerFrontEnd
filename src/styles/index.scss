@@ -14,7 +14,6 @@ body{
 .nav-wrapper{
   font-size: 2rem;
   background-color: #00bcd4;
-  position: fixed;
 }
 
 .nav-wrapper a:hover, a.brand-logo:hover{
@@ -65,7 +64,16 @@ body{
 }
 .inventory{
   margin-top: 10vh;
+  max-width: 25%;
 }
+.currentActCard{
+  display: flex;
+  align-content: flex-start;
+  align-items: baseline;
+  margin:auto;
+}
+
+
 .track {
   display: -webkit-box;
   display: flex;

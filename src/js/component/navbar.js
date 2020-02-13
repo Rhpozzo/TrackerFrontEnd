@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Navbar = () => {
 	return (
-		<nav className="nav-wrapper navbar-fixed">
+		<nav className="navbar fixed nav-wrapper">
 			<div className="">
 				<a href="#!" className="brand-logo center">
 					TimeTracker <span className="technologies">Warehouse Technologies.</span>
