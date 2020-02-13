@@ -4,6 +4,7 @@ import moment from "moment";
 import PropTypes from "prop-types";
 import Countdown from "./CountdownClock";
 import CurrentAct from "./CurrentAct";
+import { Link } from "react-router-dom";
 
 const Header = () => {
 	return (
@@ -18,7 +19,9 @@ const Header = () => {
 				</h1>
 			</header>
 			<button className="waves-effect waves-light btn pulse">End Wave</button>
-			<CurrentAct />
+			<Link to="/qrreader">
+				<button className="btn">Scan In</button>
+			</Link>
 		</div>
 	);
 };

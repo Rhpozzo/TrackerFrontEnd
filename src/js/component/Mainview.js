@@ -1,9 +1,11 @@
 import React from "react";
+import CurrentAct from "./CurrentAct";
 
 const Mainview = () => {
 	return (
 		<div className="inventory">
-			<h1>Wave Times: </h1>
+			<h1>Current Activity: </h1>
+			<CurrentAct />
 		</div>
 	);
 };

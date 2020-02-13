@@ -7,15 +7,10 @@ export const ContactCard = props => {
 	return (
 		<li>
 			<div className="row">
-				<div classNameName="col s12 m7">
-					<div className="card">
-						<div className="card-image">
-							<img src="" />
-							<span className="card-title">{props.vin}</span>
-						</div>
-						<div className="card-content">
-							<p>{props.scan_time}</p>
-						</div>
+				<div className="col s12 m7">
+					<div className="card">{/* <span className="card-title">{props.vin}</span> */}</div>
+					<div className="card-content">
+						<p>{props.scan_time}</p>
 					</div>
 				</div>
 			</div>
