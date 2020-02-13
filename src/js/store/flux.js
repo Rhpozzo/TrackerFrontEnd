@@ -4,7 +4,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			companies: [],
 			vans: [],
-			activities: []
+			activities: [],
+			currentAct: []
 		},
 		actions: {
 			// VANS
@@ -107,6 +108,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.then(data => {
 						getActions().loadAllActivities();
+						setStore({
+							...getStore,
+							currentAct: data
+						});
 						console.log("Success:", JSON.stringify(data));
 						history.push("/app");
 					})
