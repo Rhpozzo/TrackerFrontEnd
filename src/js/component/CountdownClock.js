@@ -33,9 +33,6 @@ const Count = () => {
 	if (minutes > 30) {
 		timeLeft = (3600 - sum) * 1000;
 	}
-	if (minutes == 0) {
-		timeLeft = 1800001;
-	}
 
 	return (
 		<div>

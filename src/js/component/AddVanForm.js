@@ -1,6 +1,8 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
+import { withRouter } from "react-router";
+import { Link } from "react-router-dom";
 
 const AddVanForm = ({ history }) => {
 	const { actions, store } = useContext(Context);
@@ -42,7 +44,9 @@ const AddVanForm = ({ history }) => {
 				<option value="available"> Good to go</option>
 				<option value="unavailable"> Getting Repairs </option>
 			</select>
-			<button>+ Add Van</button>
+			<Link to="/admin">
+				<button>+ Add Van</button>
+			</Link>
 		</form>
 	);
 };
@@ -51,4 +55,4 @@ AddVanForm.propTypes = {
 	history: PropTypes.object
 };
 
-export default AddVanForm;
+export default withRouter(AddVanForm);

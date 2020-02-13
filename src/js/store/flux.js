@@ -25,7 +25,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(response => response.json())
 					.then(data => {
 						getActions().loadAllCompanies();
-						history.push("/app");
+						history.push("/admin");
 						console.log("Success:", JSON.stringify(data));
 					})
 					.catch(error => {
@@ -128,8 +128,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(response => response.json())
 					.then(data => {
 						getActions().loadAllVans();
-						console.log("Success:", JSON.stringify(data));
 						history.push("/app");
+						console.log("Success:", JSON.stringify(data));
 					})
 					.catch(error => {
 						console.error("Error:", error);
