@@ -32,8 +32,11 @@ const injectContext = PassedComponent => {
 			 *
 			 **/
 			//state.actions.loadAllVans();
-			state.actions.loadAllActivities();
 			// console.log(state.store.hash);
+			// const clearInter = setInterval(() => state.actions.loadAllActivities(), 2000);
+			// return () => {
+			// 	clearInter();
+			// };
 		}, []);
 
 		// The initial value f]or the context is not null anymore, but the current state of this component,
