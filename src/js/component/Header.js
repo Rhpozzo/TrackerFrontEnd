@@ -7,6 +7,17 @@ import CurrentAct from "./CurrentAct";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+	const [time, setTime] = useState();
+
+	const clicktime = () => {
+		let time = new Date();
+		let hours = time.getHours();
+		let minutes = time.getMinutes();
+		let seconds = time.getSeconds();
+
+		return setTime(`${hours}:${minutes}:${seconds}`);
+	};
+
 	return (
 		<div>
 			<header className="top">
@@ -18,10 +29,17 @@ const Header = () => {
 					<Count />
 				</h1>
 			</header>
-			<button className="waves-effect waves-light btn pulse">End Wave</button>
+			<div>
+				<button className="waves-effect waves-light btn pulse" onClick={clicktime}>
+					Wave End
+				</button>
+			</div>
 			<Link to="/qrreader">
 				<button className="btn">Scan In</button>
 			</Link>
+			<div>
+				<p>{time}</p>
+			</div>
 		</div>
 	);
 };
