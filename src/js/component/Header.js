@@ -14,12 +14,11 @@ const Header = () => {
 					<br />
 				</h1>
 				<h3 className="tagline" />
-				<h1>
+				<h1 className="countdown">
 					<Countdown />
 				</h1>
 			</header>
-			<button>Wave ended</button>
-			<CurrentAct />
+			<button className="waves-effect waves-light btn pulse">End Wave</button>
 		</div>
 	);
 };
