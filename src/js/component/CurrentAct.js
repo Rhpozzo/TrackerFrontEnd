@@ -6,9 +6,9 @@ const CurrentAct = () => {
 	const { store, actions } = useContext(Context);
 	useEffect(() => {
 		const clearInter = setInterval(() => actions.loadAllActivities(), 2000);
-		return () => {
-			clearInter();
-		};
+		// return () => {
+		// 	clearInter();
+		// };
 	}, []);
 	return (
 		<div>

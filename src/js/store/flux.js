@@ -4,12 +4,116 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			companies: [],
 			vans: [],
-			activities: [],
-			currentActivities: []
+			activities: []
 		},
 		actions: {
+			// COMPANIES
+			createCompany: (data, history) => {
+				fetch("https://loadtrackerapi.herokuapp.com/api/company", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${localStorage.getItem("token")}`
+					},
+					body: JSON.stringify({
+						fc_id: data.fcId,
+						company_name: data.company,
+						email: data.email,
+						password: data.password
+					})
+				})
+					.then(response => response.json())
+					.then(data => {
+						getActions().loadAllCompanies();
+						history.push("/app");
+						console.log("Success:", JSON.stringify(data));
+					})
+					.catch(error => {
+						console.error("Error:", error);
+					});
+			},
+
+			updateCompany: (data, id, history) => {
+				fetch("https://loadtrackerapi.herokuapp.com/api/company" + id, {
+					method: "PUT",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${localStorage.getItem("token")}`
+					},
+					body: JSON.stringify({
+						fc_id: data.fcId,
+						company_name: data.company,
+						email: data.email,
+						password: data.password
+					})
+				})
+					.then(response => response.json())
+					.then(data => {
+						getActions().loadAllCompanies();
+						console.log("Success:", JSON.stringify(data));
+						history.push("/app");
+					})
+					.catch(error => {
+						console.error("Error:", error);
+					});
+			},
+
+			loadAllCompanies: () => {
+				fetch("https://loadtrackerapi.herokuapp.com/api/company", {
+					method: "GET",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${localStorage.getItem("token")}`
+					}
+				})
+					.then(response => response.json())
+					.then(data => {
+						setStore({
+							...getStore,
+							companies: data
+						});
+					})
+					.catch(error => {
+						console.error("Error:", error);
+					});
+			},
+
+			getCompany: id => {
+				fetch("https://loadtrackerapi.herokuapp.com/api/company/" + id, {
+					method: "GET",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${localStorage.getItem("token")}`
+					}
+				})
+					.then(response => response.json())
+					.then(data => {
+						//console.log(data.company_name, data.vin);
+						return [data.company_name, data.email];
+					})
+					.catch(error => {
+						console.error("Error:", error);
+					});
+			},
+
+			deleteCompany: id => {
+				fetch("https://loadtrackerapi.herokuapp.com/api/van/" + id, {
+					method: "DELETE",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${localStorage.getItem("token")}`
+					}
+				})
+					.then(() => {
+						getActions().loadAllCompanies();
+					})
+					.catch(error => {
+						console.error("Error:", error);
+					});
+			},
+
 			// VANS
-			createVan: data => {
+			createVan: (data, history) => {
 				fetch("https://loadtrackerapi.herokuapp.com/api/van", {
 					method: "POST",
 					headers: {
@@ -23,10 +127,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				})
 					.then(response => response.json())
 					.then(data => {
-						console.log("Success:", JSON.stringify(data));
-					})
-					.then(() => {
 						getActions().loadAllVans();
+						console.log("Success:", JSON.stringify(data));
+						history.push("/app");
 					})
 					.catch(error => {
 						console.error("Error:", error);
@@ -109,9 +212,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.then(data => {
 						getActions().loadAllActivities();
-						setStore({
-							currentActivities: store.currentActivities.concat(data)
-						});
 						console.log("Success:", JSON.stringify(data));
 						history.push("/app");
 					})

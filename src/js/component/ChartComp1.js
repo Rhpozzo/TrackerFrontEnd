@@ -102,7 +102,7 @@ export default class ChartComp1 extends PureComponent {
 							activeDot={{ r: 7 }}
 							name="Actual time"
 						/>
-						<Line type="monotone" dataKey="average" stroke="#82ca9d" name="Averege time" />
+						<Line type="monotone" dataKey="average" stroke="#82ca9d" name="Average time" />
 					</LineChart>
 				</div>
 				<div style={{ marginTop: "20px" }}>
@@ -129,7 +129,7 @@ export default class ChartComp1 extends PureComponent {
 							activeDot={{ r: 7 }}
 							name="Actual time"
 						/>
-						<Line type="monotone" dataKey="average" stroke="#82ca9d" name="Averege time" />
+						<Line type="monotone" dataKey="average" stroke="#82ca9d" name="Average time" />
 					</LineChart>
 				</div>
 			</div>
