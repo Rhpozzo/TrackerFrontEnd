@@ -11,6 +11,8 @@ import AddVanForm from "./component/AddVanForm";
 import Main from "./views/main";
 import Single from "./views/single";
 import CompanyInfo from "./views/companyInfo";
+import "../styles/index.scss";
+import "../styles/footer.scss";
 //import ChartComp1 from "./component/ChartComp1";
 
 export const Layout = () => {

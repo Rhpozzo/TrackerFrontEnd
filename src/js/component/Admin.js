@@ -18,7 +18,7 @@ export const Admin = props => {
 				<div className="card admin-card center-align">
 					<p className="center-align blue-gret darken-1">What would you like to do today?</p>
 					<Link to={AddVanForm}>
-						<button className="z-depth-2 waves-effect pulse">Create a Company?</button>
+						<button className="z-depth-2 waves-effect">Create a Company?</button>
 					</Link>
 					<Link to={AddVanForm}>
 						<button className="z-depth-2 waves-effect">Add a van?</button>
