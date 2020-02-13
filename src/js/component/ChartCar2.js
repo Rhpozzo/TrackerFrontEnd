@@ -98,8 +98,8 @@ export default class ChartCar2 extends PureComponent {
 						<PolarGrid />
 						<PolarAngleAxis dataKey="subject" />
 						<PolarRadiusAxis />
-						<Radar name="Company Load Time" dataKey="B" stroke="#9fd884" fill="#9fd884" fillOpacity={0.7} />
-						<Radar name="Van N2 Load Time" dataKey="A" stroke="#d88496" fill="#d88496" fillOpacity={0.4} />
+						<Radar name="Company Time" dataKey="B" stroke="#9fd884" fill="#9fd884" fillOpacity={0.7} />
+						<Radar name="Van N2 Time" dataKey="A" stroke="#d88496" fill="#d88496" fillOpacity={0.4} />
 						<Legend />
 					</RadarChart>
 				</div>
@@ -119,8 +119,8 @@ export default class ChartCar2 extends PureComponent {
 						<YAxis />
 						<Tooltip />
 						<Legend />
-						<Bar dataKey="pv" fill="#82ca9d" name="Company Load Time" />
-						<Bar dataKey="uv" fill="#d88496" name="Van N2 Load Time" />
+						<Bar dataKey="pv" fill="#82ca9d" name="Company Time" />
+						<Bar dataKey="uv" fill="#d88496" name="Van N2 Time" />
 					</BarChart>
 				</div>
 			</div>

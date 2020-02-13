@@ -8,12 +8,17 @@ import ChartCar3 from "../component/ChartCar3";
 
 const CompanyInfo = () => {
 	return (
-		<div style={{ marginBottom: "10px" }}>
-			<h1 style={{ marginTop: "20px" }}>Van N1</h1>
+		<div style={{ marginTop: "20px", marginBottom: "10px" }}>
+			<Link to="/single">
+				<button style={{ marginLeft: "20px" }} className="btn">
+					To Company
+				</button>
+			</Link>
+			<h1 style={{ textAlign: "center" }}>Van N1</h1>
 			<ChartCar1 />
-			<h1 style={{ marginTop: "20px" }}>Van N2</h1>
+			<h1 style={{ textAlign: "center", marginTop: "20px" }}>Van N2</h1>
 			<ChartCar2 />
-			<h1 style={{ marginTop: "20px" }}>Van N3</h1>
+			<h1 style={{ textAlign: "center", marginTop: "20px" }}>Van N3</h1>
 			<ChartCar3 />
 		</div>
 	);

@@ -8,12 +8,33 @@ import ChartComp3 from "../component/ChartComp3";
 
 const Single = () => {
 	return (
-		<div>
-			<h1>Company N1</h1>
+		<div style={{ marginTop: "20px", marginLeft: "50px" }}>
+			<h1 style={{ textAlign: "center" }}>
+				Company N1
+				<Link to="/company">
+					<button style={{ marginLeft: "100px" }} className="btn">
+						View Vans
+					</button>
+				</Link>
+			</h1>
 			<ChartComp1 />
-			<h1>Company N2</h1>
+			<h1 style={{ textAlign: "center", marginTop: "30px" }}>
+				Company N2
+				<Link to="/company">
+					<button style={{ marginLeft: "100px" }} className="btn">
+						View Vans
+					</button>
+				</Link>
+			</h1>
 			<ChartComp2 />
-			<h1>Company N3</h1>
+			<h1 style={{ textAlign: "center", marginTop: "30px" }}>
+				Company N3
+				<Link to="/company">
+					<button style={{ marginLeft: "100px" }} className="btn">
+						View Vans
+					</button>
+				</Link>
+			</h1>
 			<ChartComp3 />
 		</div>
 	);

@@ -3,43 +3,43 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "r
 
 const data = [
 	{
-		name: "Monday",
+		name: "Mon",
 		average: 28,
 		actual: 32
 		//amt: 2400
 	},
 	{
-		name: "Tuesday",
+		name: "Tue",
 		average: 27,
 		actual: 31
 		//amt: 2210
 	},
 	{
-		name: "Wednsday",
+		name: "Wed",
 		average: 27,
 		actual: 33
 		//amt: 2290
 	},
 	{
-		name: "Thursday",
+		name: "Thu",
 		average: 27,
 		actual: 31
 		//amt: 2000
 	},
 	{
-		name: "Friday",
+		name: "Fri",
 		average: 29,
 		actual: 32
 		//amt: 2181
 	},
 	{
-		name: "Saturday",
+		name: "Sat",
 		average: 28,
 		actual: 32
 		//amt: 2500
 	},
 	{
-		name: "Sunday",
+		name: "Sun",
 		average: 29,
 		actual: 35
 		//amt: 2100
@@ -48,25 +48,25 @@ const data = [
 
 const dataMonth = [
 	{
-		name: "Week I",
+		name: "I",
 		average: 28,
 		actual: 31
 		//amt: 2400
 	},
 	{
-		name: "Week II",
+		name: "II",
 		average: 27,
 		actual: 31
 		//amt: 2210
 	},
 	{
-		name: "Week III",
+		name: "III",
 		average: 27,
 		actual: 31
 		//amt: 2290
 	},
 	{
-		name: "Week IV",
+		name: "IV",
 		average: 28,
 		actual: 33
 		//amt: 2000
