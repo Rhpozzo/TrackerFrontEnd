@@ -28,7 +28,7 @@ const AddCompanyForm = ({ history }) => {
 	};
 
 	return (
-		<form className="input-field col s6" style={{ marginTop: "100px" }} onSubmit={addCompany}>
+		<form className="input-field col s6" style={{ marginTop: "20px", width: "75%" }} onSubmit={addCompany}>
 			<input
 				name="company"
 				type="text"
