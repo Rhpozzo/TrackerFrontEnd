@@ -221,6 +221,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			loadAllActivities: () => {
+				const store = getStore();
 				fetch("https://loadtrackerapi.herokuapp.com/api/activity", {
 					method: "GET",
 					headers: {
@@ -231,8 +232,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(response => response.json())
 					.then(data => {
 						setStore({
-							...getStore,
-							activities: data
+							activities: store.activities === null ? [] : data
 						});
 					})
 					.catch(error => {

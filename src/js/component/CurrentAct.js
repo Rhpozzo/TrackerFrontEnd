@@ -11,7 +11,7 @@ const CurrentAct = () => {
 		// };
 		// clearInter();
 		//return () => {
-		// 	clearInter();
+		// 		clearInter();
 		// };
 	}, []);
 	return (
@@ -19,7 +19,7 @@ const CurrentAct = () => {
 			<ul>
 				{store.activities.map((item, index) => {
 					return (
-						<div key={index}>
+						<div key={item.id}>
 							<ContactCard scan_time={item.scan_time.split(" ")[1]} />
 						</div>
 					);

@@ -14,7 +14,7 @@ const Header = () => {
 					<Clock format={"HH:mm:ss"} interval={1000} ticking={true} timezone={"EST"} />
 					<br />
 				</h1>
-				<h1>
+				<h1 className="countdown">
 					<Count />
 				</h1>
 			</header>
