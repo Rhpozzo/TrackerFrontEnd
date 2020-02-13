@@ -14,11 +14,8 @@ import CompanyInfo from "./views/companyInfo";
 import "../styles/index.scss";
 import "../styles/footer.scss";
 import QRReader from "./component/QRReader";
-<<<<<<< HEAD
 import Lost from "./component/Lost";
-=======
 import AddCompanyForm from "./component/AddCompanyForm";
->>>>>>> 78a9ecf13a02c0ef832d5ca4800532e99f1e44a5
 //import ChartComp1 from "./component/ChartComp1";
 
 export const Layout = () => {
@@ -39,12 +36,8 @@ export const Layout = () => {
 						<Route path="/single" component={Single} />
 						<Route path="/company" component={CompanyInfo} />
 						<Route path="/qrreader" component={QRReader} />
-<<<<<<< HEAD
-						<Route component={Lost} />
-=======
 						<Route path="/add-company" component={AddCompanyForm} />
 						<Route render={() => <h1>Not found!</h1>} />
->>>>>>> 78a9ecf13a02c0ef832d5ca4800532e99f1e44a5
 					</Switch>
 					<Footer />
 				</ScrollToTop>
