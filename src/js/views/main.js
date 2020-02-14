@@ -26,7 +26,7 @@ const Main = ({ history }) => {
 	};
 
 	return (
-		<div className="card">
+		<div>
 			<div className="admin-card">
 				<form onSubmit={login}>
 					<p>Welcome please sign in to view admin dashboard, else view clock</p>

@@ -31,7 +31,7 @@ const injectContext = PassedComponent => {
 			 * state.actions.loadSomeData(); <---- calling this function from the flux.js actions
 			 *
 			 **/
-			setInterval(() => state.actions.loadAllActivities(), 2000);
+			setInterval(() => state.actions.loadAllActivities(), 1000);
 			//state.actions.loadAllVans();
 			// console.log(state.store.hash);
 			// const clearInter = setInterval(() => state.actions.loadAllActivities(), 2000);

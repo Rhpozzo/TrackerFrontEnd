@@ -43,13 +43,14 @@ body{
   font-size: 0.5em;
   font-style: italic;
 }
-.admin-card form{
-  padding: 300px;
-}
+  .admin-card form{
+    margin: 100px;
+    max-width: 500px;
+  }
 
-.admin-view {
-  height: 100vh;
-}
+// .admin-view {
+//   height: 100vh;
+// }
 .admin-view p {
   margin-top: 90px;
 }

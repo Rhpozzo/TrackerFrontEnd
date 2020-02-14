@@ -6,6 +6,7 @@ export const Navbar = () => {
 		<nav className="navbar fixed nav-wrapper">
 			<div className="">
 				<a href="#!" className="brand-logo center">
+					<img />
 					TimeTracker <span className="technologies">Warehouse Technologies.</span>
 				</a>
 				<ul className="left hide-on-med-and-down">
