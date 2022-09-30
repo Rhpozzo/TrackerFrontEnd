@@ -88,6 +88,6 @@
 		"react-router": "^4.3.1",
 		"react-router-dom": "^4.3.1",
 		"reactive-qr": "^0.1.8",
-		"recharts": "^2.0.0-beta.1"
+		"recharts": "^2.1.14"
 	}
 }
